@@ -1,3 +1,18 @@
+/*
+	Reviews an input text to establish if it uses brackets
+	correctly. 
+	Input is scanned, adding all brackets in the text to a stack
+	for easy identification of possible mistmatches.
+
+	Input: one string S which consists of big and small latin
+		   letters, digits and punctuation marks
+	Output: "Success" if brackets are used correctly and if not
+			output 1-based index of the first unmatched closing
+			bracket. If there are no unmatched closing brakets,
+			output the 1-based index of the first unmatched 
+			opening bracket
+*/
+
 #include <iostream>
 #include <stack>
 #include <string>

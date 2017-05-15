@@ -1,3 +1,21 @@
+/*
+	Compute height of a given tree. Height of a rooted tree is
+	the maximum depth of a node, or the maximum distance from a
+	leaf to the root. Input needn't be a binary tree.
+	Idea if to apply breadth-first search using queue and add
+	a sentinel value (-1) to signal a change of level. Sentinel
+	is only added to the queue when the previous one is extracted.
+
+	Input: first line contains number of nodes, n.
+		   second line contains n integer numbers from -1 to n - 1
+		   which are parents of nodes. If the ith one is -1, node i 
+		   is the root otherwise it's the 0-base index of the parent
+		   of the ith node. It is guaranted that there is exactly one
+		   root and that input represents a tree.
+		   1 <= n <= 10^5
+	Output: output the height of the tree.
+*/
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -19,11 +37,13 @@ int tree_height(vector<vector<Node> > tree, int root) {
 
 	queue<int> q;
 	q.push(root);
+	// Add first sentinel value
 	q.push(-1);
 	int node = root;
 	int height = 1;
 	while (!q.empty()) {
 		node = q.front();
+		// Queue only contains the sentinel value
 		if (q.size() == 1 && q.front() == -1) return height;
 		if (node == -1) {
 			height++;

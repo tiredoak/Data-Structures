@@ -1,3 +1,25 @@
+/*
+	Program simulates a sequence of merge operations with
+	tables in a database.
+	Use disjoin set data structure with union by rank
+	heuristic.
+	
+	Input: first line of the input contains two integers n
+		   and m - the number of tables in the database and
+		   the number of merge queries to perform respectively.
+		   The second line contain n integers ri - the number of
+		   rows in the i-th table.
+		   The next m lines describe the merge queries. Each
+		   contains 2 integers destination_i and source_i - the
+		   numbers of the tables to merge. 
+		   1 <= n, m <= 100 000; 0 <= ri <= 10 000;
+		   1 <= destination_i, source_i <= n
+	Output: for each query print a line containing a single
+			integer - the maximum of the sizes of all tables
+			(in terms of number of rows) afther the corresponding
+			operation.
+*/
+
 #include <cstdio>
 #include <cstdlib>
 #include <vector>

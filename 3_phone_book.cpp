@@ -1,3 +1,13 @@
+/*
+    Implements a phone book using a direct addressing scheme.
+
+    Input: single integer N in the first line - the number of
+           queries. It's followed by N lines each of them 
+           containing a query in the specified format.
+           1 <= N <= 10^5
+    Output: prints the result of each find query.
+*/
+
 #include <iostream>
 #include <vector>
 #include <string>

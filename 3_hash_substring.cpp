@@ -1,3 +1,19 @@
+/*
+    Finds a pattern in a text using Rabin-Karp's algorithm.
+    The key trick of the algorithm is to pre-compute the 
+    hashes in O(N) from the last one to the first using
+    the fact that these values are similar.
+
+    Input: two strings, the pattern P and the text T.
+           1 <= |P| <= |T| <= 5*10^5
+           Only latin letters
+           Total length of the occurences of P in T doesn't
+           exceed 10^8.
+    Output: print all the positions of the occurences of P in
+            T in ascending order. Use 0-based indexing of the
+            positions in the text T. 
+*/
+
 #include <iostream>
 #include <string>
 #include <cmath>
@@ -58,7 +74,6 @@ std::vector<int> rabin_karp(const string &s, const string &p) {
     ull pattern_hash = poly_hash(p, prime, x);
     std::vector<long long> hashes = pre_compute_hashes(s, pattern_length, prime, x);
     for (int i = 0; i <= text_length - pattern_length; i++) {
-        //long long t_hash = poly_hash(s.substr(i, pattern_length), prime, x);
         if (pattern_hash != hashes[i]) continue;
         if (p.compare(s.substr(i, pattern_length)) == 0) result.push_back(i);
     }

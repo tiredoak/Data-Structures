@@ -1,3 +1,22 @@
+/*
+  Simulate a program which is parallelized and uses n independent
+  threads to process the given list of m jobs.
+
+  Input: first line contains integers n and m.
+         second line contains m integers ti - the times in seconds
+         it takes any thread to process the ith job.
+         The times are given in the same order as they are in the list
+         from which threads take jobs. Threads are indexed starting at
+         0.
+         1 <= n <= 10^5; 1 <= m <= 10^5; 0 <= ti <= 10^9
+  Output: output exactly m lines. i-th line (0-based index)
+          should contain two space separated integers - the
+          0-based index of the thread which will process the
+          i-th job and the time in seconds when it will start
+          processing that job.
+
+*/
+
 #include <iostream>
 #include <vector>
 #include <algorithm>

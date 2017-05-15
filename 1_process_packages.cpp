@@ -1,3 +1,19 @@
+/*
+    Simulate the processing of network packets in a single
+    processor machine.
+
+    Input: first line contains size S of the buffer and number
+           n of incoming packets. Each of the next n-lines
+           contains 2 numbers, ith line contains the arrival
+           time Ai and the processing time Pi of the ith packet.
+           It is guaranteed the sequence is non-decreasing.
+           1 <= S <= 10^5; 1 <= n <= 10^5; 0 <= Ai <= 10^6
+           0 <= Pi <= 10^3 and Ai <= Ai+1
+    Output: for each packet output either the moment in time
+            when the processor began processing it or -1 if
+            the packet was dropped.
+*/
+
 #include <iostream>
 #include <deque>
 #include <vector>

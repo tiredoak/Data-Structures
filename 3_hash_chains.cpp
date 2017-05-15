@@ -1,3 +1,17 @@
+/*
+    Implementation of a hash table using chaining scheme.
+
+    Input: single integer m in the first line,
+           next line contains the number of queries N. It's
+           followed by n lines, each of them containig one query
+           1 <= N <= 10^5; (N/5) <= m <= N
+           All strings are latin letters, are non-empty and length
+           is at most 15.
+    Output: Print result of each find and check queries, one
+            result per line, in the same order as these queries
+            are given in the input. 
+*/
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -33,14 +47,6 @@ public:
       hash_table(bucket_count, vector<string>(1, ""))
 	{
 	}
-    /*
-    explicit QueryProcessor(int bucket_count): bucket_count(bucket_count) {
-    	for (int i = 0; i < bucket_count; i++) {
-    		vector<string> v_string(1);
-    		hash_table.push_back(v_string);
-    	}
-    }
-    */
 
     Query readQuery() const {
         Query query;
